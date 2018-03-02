@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<meta charset="UTF-8">
+    <head>
+        <title>跑马灯</title>
+        <script language="JavaScript">
+            var msg="品味中原文化，寄情黄河风景";  //移动文字
+            var  interval=400;                    //移动速度
+            var  seq=0;
+            function myfunction()
+            {
+                x=document.getElementById("demo");  /*找到元素*/
+                  x.innerHTML="看到了吧!!!"/*改变元素*/
+                    x.style.color="#ff0000";
+            }
+            function  LenScroll()
+            {
+                document.nextForm.lenText.value=msg.substring(seq,msg,length)+""+msg;
+                seq++;
+                if(seq>msg.length)
+                    seq=0;
+                window.setTimeout("LenScroll();",interval);
+            }
+        </script>
+        <style type="text/css">
+            <!--
+            Body
+            {
+                background-color: #ffffff;      /*页面背景色*/
+            }
+            Input
+            {
+                background:transparent;
+                border: none;
+                color:#ffb400;
+                font-size:15px;
+                font-weight:bold;
+                font-family: 黑体;
+            }
+            </style>
+</head>
+<body onload="LenScroll()">
+<button type="button" onclick="myfunction()">点击这里</button>
+    <form name="nextForm">
+        <input type=text name="lenText">
+    </form>
+<div id="demo">
+    我今天给大家表演一个魔术！
+</div>
+</body>
+</html>
